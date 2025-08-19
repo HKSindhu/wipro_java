@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Frames</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+.wrap{display:flex;flex-direction:column;height:100%}
+header{height:30%;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #ccc}
+header img{max-height:100%}
+.bottom{flex:1;display:flex}
+.left{width:30%;border-right:1px solid #ccc;padding:10px}
+.menu a{display:block;padding:8px;margin:6px 0;text-decoration:none;border:1px solid #ccc;border-radius:6px}
+.menu a.active{background:#eee}
+.right{flex:1;padding:15px;overflow:auto}
+.font-card,.align-sample{border:1px solid #ccc;padding:10px;margin:10px 0;border-radius:6px}
+.font-name{font-size:12px;color:#666;margin-bottom:5px}
+.sample{font-size:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<img src="https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630">
+</header>
+<div class="bottom">
+<div class="left">
+<div class="menu">
+<a href="#fonts" id="link-fonts" class="active">Font</a>
+<a href="#alignment" id="link-align">Alignment</a>
+</div>
+</div>
+<div class="right">
+<section id="page-fonts">
+<h3>Fonts</h3>
+<div class="font-card">
+<div class="font-name">Agency FB</div>
+<div class="sample" style="font-family:'Agency FB','Arial Narrow',sans-serif;">Sample text</div>
+</div>
+<div class="font-card">
+<div class="font-name">Cambria</div>
+<div class="sample" style="font-family:Cambria,serif;">Sample text</div>
+</div>
+<div class="font-card">
+<div class="font-name">Elephant</div>
+<div class="sample" style="font-family:Elephant,serif;">Sample text</div>
+</div>
+<div class="font-card">
+<div class="font-name">Courier New</div>
+<div class="sample" style="font-family:'Courier New',monospace;">Sample text</div>
+</div>
+<div class="font-card">
+<div class="font-name">Georgia</div>
+<div class="sample" style="font-family:Georgia,serif;">Sample text</div>
+</div>
+</section>
+<section id="page-align" hidden>
+<h3>Alignments</h3>
+<div class="align-sample" style="text-align:left">Left aligned text example</div>
+<div class="align-sample" style="text-align:center">Center aligned text example</div>
+<div class="align-sample" style="text-align:right">Right aligned text example</div>
+<div class="align-sample" style="text-align:justify">Justified text example Justified text example Justified text example</div>
+</section>
+</div>
+</div>
+</div>
+<script>
+const linkFonts=document.getElementById('link-fonts')
+const linkAlign=document.getElementById('link-align')
+const pageFonts=document.getElementById('page-fonts')
+const pageAlign=document.getElementById('page-align')
+function show(p){const f=p==='fonts';pageFonts.hidden=!f;pageAlign.hidden=f;linkFonts.classList.toggle('active',f);linkAlign.classList.toggle('active',!f)}
+linkFonts.onclick=e=>{e.preventDefault();show('fonts')}
+linkAlign.onclick=e=>{e.preventDefault();show('alignment')}
+window.onload=()=>{show(location.hash==='#alignment'?'alignment':'fonts')}
+</script>
+</body>
+</html>
