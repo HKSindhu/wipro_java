@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Hidden Inputs Echo</title>
+<style>
+  .box{width:100%;max-width:640px}
+  iframe{width:100%;height:260px;border:1px solid #ccc;border-radius:8px}
+  label{display:block;margin:.4rem 0}
+  input[type="text"]{padding:.45rem .6rem}
+</style>
+</head>
+<body>
+<form class="box" action="https://httpbin.org/get" method="get" target="echo">
+  <!-- Hidden values -->
+  <input type="hidden" name="promo" value="SUMMER25">
+  <input type="hidden" name="ref" value="newsletter">
+  <!-- A visible field just to trigger submit -->
+  <label>Your name (optional)
+    <input type="text" name="name" placeholder="Type and press Enter">
+  </label>
+  <!-- Press Enter to submit; the iframe will display echoed query params -->
+</form>
+<iframe name="echo" title="Submission result (echo)"></iframe>
+<p>The iframe shows the response containing the hidden inputs’ values — no JavaScript needed.</p>
+</body>
+</html>

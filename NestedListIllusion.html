@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Inline Nested List</title>
+<style>
+  .p-list,.p-list ol,.p-list ul{margin:0;padding:0;list-style:none}
+  .p-list li{display:inline}
+  .p-list li+li::before{content:" "}
+</style>
+</head>
+<body>
+<ol class="p-list">
+  <li>This</li><li>is</li><li>a</li><li>sentence</li><li>made</li><li>of</li>
+  <li>
+    <ul class="p-list"><li>nested</li><li>list</li><li>items.</li></ul>
+  </li>
+</ol>
+</body>
+</html>

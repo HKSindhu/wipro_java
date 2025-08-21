@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Overlapping Image Map</title>
+<style>img{max-width:480px;height:auto;display:block}</style>
+</head>
+<body>
+<!-- Source order matters: first matching <area> wins when overlapping -->
+<img src="data:image/svg+xml;utf8,
+<svg xmlns='http://www.w3.org/2000/svg' width='600' height='250'>
+  <rect width='600' height='250' fill='%23f3f4f6'/>
+  <rect x='80' y='50' width='300' height='150' fill='%23c7d2fe'/>
+  <circle cx='230' cy='125' r='90' fill='%2392e6a7' fill-opacity='0.9'/>
+  <text x='300' y='30' text-anchor='middle' font-family='sans-serif'>Rectangle & Circle Overlap</text>
+</svg>" usemap="#zones" alt="Overlap demo">
+<map name="zones">
+  <!-- This rectangle and the circle overlap; rectangle is listed first -->
+  <area shape="rect" coords="80,50,380,200" href="https://example.com/rectangle" alt="Rectangle">
+  <area shape="circle" coords="230,125,90" href="https://example.com/circle" alt="Circle">
+</map>
+<p>When you click the overlapping region, the browser follows the <em>first</em> matching <code>&lt;area&gt;</code> (the rectangle in this markup).</p>
+</body>
+</html>

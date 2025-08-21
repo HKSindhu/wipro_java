@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>No Button Form</title>
+<style>label{display:block;margin:.4rem 0}input{padding:.5rem .7rem;width:240px}</style>
+</head>
+<body>
+<form action="https://httpbin.org/post" method="post">
+  <label>Username
+    <input name="username" type="text" autocomplete="username" required>
+  </label>
+  <label>Password
+    <input name="password" type="password" autocomplete="current-password" required>
+  </label>
+  <!-- No <button> and no <input type="submit">; pressing Enter submits -->
+</form>
+</body>
+</html>

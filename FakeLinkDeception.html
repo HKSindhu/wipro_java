@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Fake Link (No &lt;a&gt;)</title>
+<style>
+  .linkish{background:none;border:none;padding:0;margin:0;font:inherit;color:#1d4ed8;text-decoration:underline;cursor:pointer}
+  .linkish:hover{text-decoration-thickness:3px}
+</style>
+</head>
+<body>
+<!-- Submits a GET form to navigate, behaves like a link without using <a> -->
+<form action="https://example.com/target" method="get">
+  <button type="submit" class="linkish">Looks and behaves like a link</button>
+</form>
+</body>
+</html>
